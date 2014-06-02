@@ -1,7 +1,8 @@
 from django.db import models
+
+# a simple blog post model with tags
 from taggit.managers import TaggableManager
 
-# Create your models here.
 class Post(models.Model):
 	title = models.CharField(max_length=100)
 	author = models.CharField(max_length=30)
@@ -11,7 +12,9 @@ class Post(models.Model):
 	
 	def __unicode__(self):
 		return self.title
-		
+
+
+# simple rss feed for blog posts		
 from django.contrib.syndication.views import Feed
 
 class BlogFeed(Feed):
