@@ -30,6 +30,11 @@ TEMPLATE_DIRS = (
 	os.path.join(BASE_DIR, 'templates'),
 )
 
+TEMPLATE_CONTEXT_PROCESSORS = (
+	'django.contrib.messages.context_processors.messages',
+	'django.contrib.auth.context_processors.auth',
+)
+
 # Application definition
 
 INSTALLED_APPS = (
@@ -39,6 +44,8 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'taggit',
+    'blog',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -61,7 +68,7 @@ WSGI_APPLICATION = 'django_fett.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'NAME': os.path.join(BASE_DIR, 'django_blog.db'),
     }
 }
 

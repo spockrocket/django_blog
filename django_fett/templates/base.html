@@ -17,10 +17,13 @@
       }
     </style>
   </head>
-  
   <body>
-    <div>
-      <img src="../static/8-bit_sunny_banner.jpg"/>
+  <div class="image">
+      <img src="/static/8-bit_sunny_banner.jpg"/>
+  </div>
+    <div class="content">
+		{% block content %}
+		{% endblock %}
     </div>
   </body>
 

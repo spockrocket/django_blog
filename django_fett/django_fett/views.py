@@ -10,8 +10,6 @@ def hello(request):
 def index(request):
 	return render_to_response('base.html',)
 
-
-
 def hours(request, offset):
 	try:
 		offset = int(offset)
