@@ -7,7 +7,9 @@ from django.shortcuts import render_to_response
 def index(request):
 	title = 'www.spockrocket.com'
 	section = 'index'
-	return render_to_response('index.html',{'title': title, 'section': section})
+	desc = 'Busy, busy, busy'
+	lede = 'See the cat? See the cradle?'
+	return render_to_response('index.html',{'title': title, 'section': section, 'page_desc': desc, 'lede': lede})
 
 	
 #~ def hello(request):

@@ -1,18 +1,12 @@
 /*
-	Aerial X Twenty 1.0 by HTML5 UP - expanded and modified by spockrocket
-	html5up.net | @n33co
+	Aerial Twenty-EightBit 1.0 by spockrocket
+	Modified and adapted from Aerial and Twenty templates @ html5up.net | @n33co
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 */
+
 @import url("http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,900");
 @import url("font-awesome.min.css");
 
-/* Crossover from Twenty Template */
-#navbar {
-		background: #e8eef4;
-		color: #7c8081;
-		padding: none;
-		text-align: center;
-	}
 
 /* Basic */
 
@@ -26,7 +20,7 @@
 	}
 
 	body {
-		background: white;
+		background: #0a0501;
 		overflow: hidden;
 	}
 
