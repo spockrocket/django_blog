@@ -1,8 +1,10 @@
 {% extends "base.html" %}
 
+{% block title %}{{ title }}"{{ tag }}"{% endblock %}
+
 {% block content %}
 
-<h2>Posts tagged: "{{tag}}"</h2>
+<p>Posts tagged: "{{tag}}"</p>
 
 {% for post in posts %}
 <p>{{ post.pubDate|date:"Y-m-d" }}: <a href="/blog/{{post.id}}">{{ post.title }}</a></p>

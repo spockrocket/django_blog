@@ -1,48 +1,45 @@
 {% extends "base.html" %}
 
-{% block title %}{{ section.title }}{% endblock %}
-
 {% block content %}
-<nav><li><a href="/" class="fa fa-home"></a></li></nav>
-<span><p>Get In Touch...</p></span>
+
+
+<h2><p>Get In Touch</p></h2>
+{% include "nav.html" %}
 <br>
-<form action="/contact/" method="post">
-{% csrf_token %}
-{{ form.non_field_errors }}
-<div id="container">
-<div id="fieldWrapper"class='left'>
-	{{ form.name.errors }}
-	<label for="id_name">Name </label>
-	{{ form.name }}
-</div>
-<div id="fieldWrapper" class='left'>
-	{{ form.sender.errors }}
-	<label for="id_sender">E-mail </label>
-	{{ form.sender }}
-</div>
-</div>
-<div id="fieldWrapper" class='clear'>
-	{{ form.subject.errors }}
-	<div><label for="id_subject">Subject</label></div>
-	{{ form.subject }}
-</div>
-<div id="fieldWrapper">
-	{{ form.message.errors }}
-	<div><label for="id_message">What's up?</label></div>
-    {{ form.message }}
-</div>
-       
-<div id="fieldWrapper">
-	{{ form.send_to_myself.errors }}
-	<label for="id_send_to_myself">Send a copy to yourself?</label>
-	{{ form.send_to_myself }}
-	<p><input type="submit" value="Send Message" /></p>
-</div>
-
-</form>
+	<section class="wrapper style4 special container small">
+				<form action="/contact/" method="post">
+					{% csrf_token %}
+					{{ form.non_field_errors }}
+					<div class="row half no-collapse-1">
+						<div id="fieldWrapper" class="6u">
+								{{ form.name.errors }}
+								{{ form.name }}
+						</div>
+						<div id="fieldWrapper" class="6u">
+								{{ form.sender.errors }}
+								{{ form.sender }}
+						</div>
+					</div>
+					<div id="fieldWrapper" class="row half">
+						<div class="12u">
+							{{ form.subject.errors }}
+							{{ form.subject }}
+						</div>
+					</div>
+					<div id="fieldWrapper" class="row half">
+						<div class="12u">
+							{{ form.message.errors }}
+							{{ form.message }}
+						</div>
+					</div>
+					<div id="fieldWrapper">
+						{{ form.send_to_myself.errors }}
+						<label for="id_send_to_myself">Send a copy to yourself?</label>
+						{{ form.send_to_myself }}
+						<p><input type="submit" value="Send Message" /></p>
+					</div>
+					
+				</form>
+			
+		</section>
 {% endblock %}
-
-{% block footer %}
-<span class="copyright">&copy;spockrocket&nbsp;&nbsp;Web-Design:<a href="http://html5up.net">HTML5 UP</a>.</span>
-{% endblock %}
-

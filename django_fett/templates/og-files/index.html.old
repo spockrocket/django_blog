@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block title %}{{ title|lower }}{% endblock %}
+
+{% block content %}
+<h1>Busy, busy, busy.</h1>
+<p>See the cat? See the cradle?</p>
+{% include "nav.html" %}
+{% endblock %}
+
+{% block footer %}
+<span class="copyright">&copy; spockrocket. All rights reserved. Design adapted from <a href="http://html5up.net">HTML5 UP</a> templates.</span>
+{% endblock %}
+
+
+
+

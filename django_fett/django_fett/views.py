@@ -5,7 +5,9 @@ from django.shortcuts import render_to_response
 #~ import datetime
 
 def index(request):
-	return render_to_response('index.html',)
+	title = 'www.spockrocket.com'
+	section = 'index'
+	return render_to_response('index.html',{'title': title, 'section': section})
 
 	
 #~ def hello(request):

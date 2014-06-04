@@ -5,9 +5,13 @@ from django.core.mail import send_mail, BadHeaderError
 from contact.models import ContactMe
 
 def thanks(request):
-	return render_to_response('thanks.html')
+	title = 'Thanks for the input!'
+	section = 'thanks'
+	return render_to_response('thanks.html', {'title': title, 'section': section})
 
 def contactview(request):
+	title = 'Contact Me'
+	section = 'contact'
 	if request.method == 'POST':
 		form = ContactMe(request.POST) # A form bound to the POST data
 		if form.is_valid():
@@ -22,7 +26,7 @@ def contactview(request):
 		send_email(name, subject, message, sender, recipients)
 	else:
 		form = ContactMe() # An unbound form
-	return render(request, 'contact.html', {'form': form,})
+	return render(request, 'contact.html', {'form': form,'title': title, 'section': section})
 
 def send_email(name, subject, message, sender, recipients):
 	if not name:
