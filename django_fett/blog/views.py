@@ -2,7 +2,7 @@ from django.shortcuts import render_to_response
 from blog.models import Post
 from django.views.generic import ListView, DetailView
 
-# Create your views here.
+
 def blogview(request):
 	title = "My Projects Blog"
 	section = 'blog'
@@ -16,7 +16,19 @@ def tagpage(request, tag):
 	section = 'tagpage'
 	desc = 'Posts tagged: \"%s\"' % tag
 	posts = Post.objects.filter(tags__name=tag)
-	return render_to_response("tagpage.html",{"posts":posts, "tag":tag, 'title': title, 'section': section, 'page_desc': desc})
+	return render_to_response("archives.html",{"posts":posts, "tag":tag, 'title': title, 'section': section, 'page_desc': desc})
 
-def postview(request):
-	title = ''
+def postview(request, pk):
+	title = Post.objects.get(pk=int(pk))
+	desc =  Post.objects.get(pk=int(pk))
+	section = 'post'
+	post = Post.objects.get(pk=int(pk))
+	return render_to_response('post.html', {'post': post, 'title': title, 'section': section, 'page_desc': desc})
+    
+
+def archives(request):
+	title = "Archived Posts"
+	section = 'archives'
+	desc = 'Archives'
+	posts = Post.objects.all().order_by("-pubDate")
+	return render_to_response("archives.html",{"posts":posts, 'title': title, 'section': section, 'page_desc': desc})

@@ -30,3 +30,4 @@ class BlogFeed(Feed):
 		return item.body
 	def item_link(self, item):
 		return u"/blog/%d" % item.id
+		

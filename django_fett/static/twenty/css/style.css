@@ -10,7 +10,7 @@
 /* Basic */
 
 	body, #skel-layers-wrapper {
-		background: #0a0501; 					/*this is the main background colour*/
+		background: #000000; 					/*this is the main background colour*/
 	}
 	
 	body, input, select, textarea {
