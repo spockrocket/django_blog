@@ -36,10 +36,10 @@
 			<!--[if lte IE 8]><link rel="stylesheet" href="/static/aerial/css/ie/v8.css" /><![endif]-->
 		{% endif %}
 		</head>
-		<body {% ifequal section 'blog' %}''{% else %}class="loading"{% endifequal %}>
+		<body {% if section == 'blog' %}''{% else %}class="loading"{% endif %}>
 		<div id="wrapper">
 			{% if section == 'blog' %}
-				<article id="main">	
+				<article id="main">
 			{% else %}
 				<div id="bg"></div>
 				<div id="overlay"></div>
