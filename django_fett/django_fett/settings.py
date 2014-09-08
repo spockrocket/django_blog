@@ -15,14 +15,20 @@ BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.6/howto/deployment/checklist/
+ADMINS = (
+    ('spockrocket', 'admin@spockrocket.com'),
+)
+
 
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = '1xs+d4hovw7sh#9e*gtr*ax(48y8lj189(4ct$2dx4wk0*x=$e'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+#DEBUG = True
+DEBUG = False
 
-TEMPLATE_DEBUG = True
+#TEMPLATE_DEBUG = True
+TEMPLATE_DEBUG = False
 
 ALLOWED_HOSTS = []
 
@@ -65,10 +71,21 @@ WSGI_APPLICATION = 'django_fett.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/1.6/ref/settings/#databases
 
+#~ DATABASES = {
+    #~ 'default': {
+        #~ 'ENGINE': 'django.db.backends.sqlite3',
+        #~ 'NAME': os.path.join(BASE_DIR, 'django_blog.db'),
+    #~ }
+#~ }
+
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'django_blog.db'),
+        'ENGINE': 'django.db.backends.mysql', 
+        'NAME': 'shenanidjango',
+        'USER': 'spockrocket',
+        'PASSWORD': '1981Bahyec#8',
+        'HOST': 'mysql.spockrocket.com',   # Or an IP Address that your DB is hosted on
+        'PORT': '3306',
     }
 }
 
@@ -98,4 +115,6 @@ STATICFILES_DIRS = (
 )
 
 # E-mail settings
-EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+#EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+#EMAIL_HOST = 'mail.spockrocket.com'
+
